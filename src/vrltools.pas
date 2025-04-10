@@ -985,6 +985,11 @@ begin
   Exit( LongInt( amount * sides ) + bonus );
 end;
 
+function TDiceRoll.Avg : LongInt;
+begin
+  Exit( LongInt( amount * (sides + 1) / 2 ) + bonus );
+end;
+
 function TDiceRoll.Min : LongInt;
 begin
   Exit( amount + bonus );
