@@ -65,6 +65,7 @@ type TDiceRoll = object
   procedure fromString(diecode : string);
   function max : LongInt;
   function min : LongInt;
+  function avg : Single;
 end;
 
 function NewDiceRoll(namount,nsides : Word; nbonus : Integer = 0) : TDiceRoll;
@@ -985,9 +986,9 @@ begin
   Exit( LongInt( amount * sides ) + bonus );
 end;
 
-function TDiceRoll.Avg : LongInt;
+function TDiceRoll.Avg : Single;
 begin
-  Exit( LongInt( amount * (sides + 1) / 2 ) + bonus );
+  Exit( amount * (sides + 1) * 0.5 + bonus );
 end;
 
 function TDiceRoll.Min : LongInt;
